@@ -16,7 +16,7 @@ body {
     font-size: 16px;
     font-weight: 400;
 }
-
+label.error { color: #D60404;}
 strong { font-weight: 700; }
 .red { color: #eb4141; }
 a:hover { text-decoration: none; }
@@ -79,7 +79,7 @@ a:hover { text-decoration: none; }
     -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
     -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
     box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
-    text-align: center;
+    text-align: left;
 }
 
 .register form h2 {

@@ -46,22 +46,26 @@ jQuery(document).ready(function() {
             $(this).find("label[for='username'] span").fadeIn('medium');
             return false;
         }
-        if(email == '') {
-            $(this).find("label[for='email']").append("<span style='display:none' class='red'> - Ingresa tu correo electronico.</span>");
-            $(this).find("label[for='email'] span").fadeIn('medium');
-            return false;
-        }
-        else{
-            if($(this).val().indexOf('@', 0) == -1 || $(this).val().indexOf('.', 0) == -1) {
-                $(this).find("label[for='email']").append("<span style='display:none' class='red'> - Ingresa un correo electronico válido.</span>");
-                $(this).find("label[for='email'] span").fadeIn('medium');
-                return false;
-            }
-        }
         if(password == '') {
             $(this).find("label[for='password']").append("<span style='display:none' class='red'> - Ingresa tu contraseña.</span>");
             $(this).find("label[for='password'] span").fadeIn('medium');
             return false;
+        }
+        if(email == '') {
+            $(this).find("label[for='email']").append("<span style='display:none' class='red'> - Ingresa tu correo electrónico.</span>");
+            $(this).find("label[for='email'] span").fadeIn('medium');
+            return false;
+        }
+        else{
+            if(email != '') {
+                var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+                // utilizamos test para comprobar si el parametro valor cumple la regla
+                if(!filter.test(email)){
+                    $(this).find("label[for='email']").append("<span style='display:none' class='red'> - Ingresa un correo electrónico válido.</span>");
+                    $(this).find("label[for='email'] span").fadeIn('medium');
+                    return false;
+                }
+            }
         }
     });
 
